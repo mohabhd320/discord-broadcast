@@ -1,25 +1,31 @@
+try {
+    require('dotenv').config();
+} catch (err) {
+    console.warn('dotenv package not found, using environment variables directly');
+}
+
 module.exports = {
     bot: {
         tokens: [
-          "YOUR_BOT_TOKEN_HERE",              // Main bot token - Replace with your actual token
-        //  "YOUR_SECOND_BOT_TOKEN_HERE",      // 2 bot token - Uncomment and replace to use
-        //  "YOUR_THIRD_BOT_TOKEN_HERE",       // 3 bot token - Uncomment and replace to use
-        //  "YOUR_FOURTH_BOT_TOKEN_HERE",      // 4 bot token - Uncomment and replace to use
-        //  "YOUR_FIFTH_BOT_TOKEN_HERE",       // 5 bot token - Uncomment and replace to use
+          process.env.DISCORD_TOKEN,                  // Main bot token
+          process.env.DISCORD_TOKEN_2,              // 2 bot token
+       //   process.env.DISCORD_TOKEN_3,              // 3 bot token
+      //    process.env.DISCORD_TOKEN_4,              // 4 bot token
+     //     process.env.DISCORD_TOKEN_5,              // 5 bot token
         ].filter(Boolean),
 
-        defaultLanguage: 'ar', // ar | en لغة البوت
+        defaultLanguage: 'en', // ar | en لغة البوت
         
         activity: {
-            name: 'Wick Studio', // رسالة حالة البوت
+            name: '# 𝐇istori𝐐 , 𝐄mpire .', // رسالة حالة البوت
             type: 'WATCHING', // PLAYING, STREAMING, LISTENING, WATCHING, COMPETING
-            status: 'dnd' // online, idle, dnd, invisible
+            status: 'idle' // online, idle, dnd, invisible
         }
     },
     server: {
-        guildId: 'ID',         // ايدي السيرفر
-        broadcastRoleId: 'ID', // ايدي الرول اللي يستخدم عليها البوت
-        reportChannelId: 'ID' // ايدي الروم اللي يرسل فيه البوت التقارير
+        guildId: '613081875837091844',         // ايدي السيرفر
+        broadcastRoleId: '1378867356750844036', // ايدي الرول اللي يستخدم عليها البوت
+        reportChannelId: '1379272409575587910' // ايدي الروم اللي يرسل فيه البوت التقارير
     },
     broadcast: {
         cooldownTime: 1000, // لا تلعب فيها
